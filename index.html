@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ARSH STUDIO ارائه‌دهنده طراحی وب‌سایت، طراحی رابط کاربری و پنل‌های مدیریتی، آموزش مهارت‌های دیجیتال و خدمات فناوری است. برای مشاهده خدمات و ثبت سفارش وارد شوید.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080b16">
+<link rel="canonical" href="https://arsh-studio.github.io/">
+<title>ARSH STUDIO | طراحی سایت و خدمات دیجیتال</title>
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="ARSH STUDIO">
+<meta property="og:title" content="ARSH STUDIO | طراحی سایت و خدمات دیجیتال">
+<meta property="og:description" content="طراحی وب‌سایت، پنل‌های مدیریتی و آموزش مهارت‌های دیجیتال در ARSH STUDIO.">
+<meta property="og:url" content="https://arsh-studio.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARSH STUDIO | طراحی سایت و خدمات دیجیتال">
+<meta name="twitter:description" content="طراحی وب‌سایت، پنل‌های مدیریتی و آموزش مهارت‌های دیجیتال.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "ARSH STUDIO",
+      "url": "https://arsh-studio.github.io/",
+      "inLanguage": "fa"
+    },
+    {
+      "@type": "Organization",
+      "name": "ARSH STUDIO",
+      "url": "https://arsh-studio.github.io/",
+      "description": "طراحی وب‌سایت، طراحی رابط کاربری و پنل‌های مدیریتی و آموزش مهارت‌های دیجیتال."
+    }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+}
+
+:root{
+--bg:#080b16;
+--card:#111a30;
+--blue:#00d9ff;
+--purple:#8b5cf6;
+--white:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:white;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:#080b16eF;
+backdrop-filter:blur(20px);
+border-bottom:1px solid #ffffff15;
+padding:15px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:23px;
+font-weight:900;
+color:var(--blue);
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--blue);
+}
+
+.menu{
+display:none;
+font-size:27px;
+cursor:pointer;
+}
+
+section{
+display:none;
+min-height:100vh;
+padding:120px 7% 60px;
+}
+
+section.active{
+display:block;
+animation:fade .5s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero h1{
+font-size:clamp(35px,6vw,65px);
+font-weight:900;
+line-height:1.5;
+}
+
+.hero h1 span{
+color:var(--blue);
+text-shadow:0 0 25px #00d9ff80;
+}
+
+.hero p{
+color:#aab5cb;
+line-height:2.2;
+margin:20px 0 30px;
+}
+
+.btn{
+display:inline-block;
+padding:13px 28px;
+border-radius:12px;
+background:linear-gradient(120deg,var(--blue),var(--purple));
+color:white;
+font-weight:800;
+box-shadow:0 0 25px #00d9ff30;
+transition:.3s;
+border:0;
+cursor:pointer;
+}
+
+.btn:hover{
+transform:translateY(-5px) scale(1.04);
+box-shadow:0 0 30px #00d9ff80;
+}
+
+.scene{
+width:310px;
+height:310px;
+display:flex;
+align-items:center;
+justify-content:center;
+perspective:900px;
+}
+
+.cube{
+width:190px;
+height:190px;
+position:relative;
+transform-style:preserve-3d;
+animation:rotate 12s infinite linear;
+}
+
+.face{
+position:absolute;
+width:190px;
+height:190px;
+border:2px solid var(--blue);
+background:#00d9ff15;
+box-shadow:inset 0 0 35px #00d9ff40,0 0 30px #00d9ff30;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+font-weight:900;
+color:var(--blue);
+backdrop-filter:blur(5px);
+}
+
+.front{transform:translateZ(95px)}
+.back{transform:rotateY(180deg) translateZ(95px)}
+.right{transform:rotateY(90deg) translateZ(95px)}
+.left{transform:rotateY(-90deg) translateZ(95px)}
+.top{transform:rotateX(90deg) translateZ(95px)}
+.bottom{transform:rotateX(-90deg) translateZ(95px)}
+
+@keyframes rotate{
+from{transform:rotateX(0) rotateY(0)}
+to{transform:rotateX(360deg) rotateY(360deg)}
+}
+
+.floating{
+animation:float 4s infinite ease-in-out;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+.title{
+text-align:center;
+font-size:35px;
+font-weight:900;
+margin-bottom:15px;
+}
+
+.subtitle{
+text-align:center;
+color:#9ca9c4;
+margin-bottom:45px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.card{
+background:linear-gradient(145deg,#17243e,#0c1224);
+border:1px solid #ffffff15;
+border-radius:22px;
+padding:28px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-12px) rotateX(3deg);
+border-color:var(--blue);
+box-shadow:0 15px 40px #00d9ff20;
+}
+
+.icon{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:15px;
+}
+
+.card p{
+color:#aab5cb;
+line-height:2;
+font-size:14px;
+}
+
+.price{
+font-size:22px;
+color:var(--blue);
+font-weight:900;
+margin:20px 0;
+}
+
+.page-title{
+font-size:38px;
+text-align:center;
+margin-bottom:35px;
+color:var(--blue);
+}
+
+.support-box{
+max-width:650px;
+margin:auto;
+background:var(--card);
+padding:35px;
+border-radius:25px;
+border:1px solid #ffffff20;
+text-align:center;
+}
+
+.support-box p{
+line-height:2.3;
+color:#c3cce0;
+}
+
+.contact{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin:25px 0;
+}
+
+.contact a{
+padding:13px 24px;
+border-radius:12px;
+background:#172b46;
+border:1px solid #00d9ff60;
+transition:.3s;
+}
+
+.contact a:hover{
+background:var(--blue);
+color:#080b16;
+}
+
+.about{
+max-width:850px;
+margin:auto;
+text-align:center;
+line-height:2.5;
+color:#c3cce0;
+}
+
+footer{
+padding:25px;
+text-align:center;
+border-top:1px solid #ffffff15;
+color:#7d8aa5;
+font-size:13px;
+}
+
+.orb{
+position:fixed;
+width:250px;
+height:250px;
+background:var(--purple);
+filter:blur(130px);
+opacity:.12;
+border-radius:50%;
+z-index:-1;
+pointer-events:none;
+}
+
+.orb.one{top:15%;right:-100px}
+.orb.two{bottom:10%;left:-100px;background:var(--blue)}
+
+@media(max-width:700px){
+
+header{
+padding:15px 5%;
+}
+
+.menu{display:block}
+
+nav{
+display:none;
+position:absolute;
+top:65px;
+right:0;
+width:100%;
+background:#10182b;
+padding:25px;
+flex-direction:column;
+text-align:center;
+}
+
+nav.show{display:flex}
+
+.hero{
+flex-direction:column;
+text-align:center;
+justify-content:center;
+}
+
+.scene{
+transform:scale(.8);
+margin-top:10px;
+}
+
+.title{font-size:28px}
+
+section{
+padding:105px 5% 50px;
+}
+
+}
+
+/* ARSH STUDIO – visual upgrade */
+header{
+  background:rgba(8,11,22,.78)!important;
+  border:1px solid #ffffff22!important;
+  border-radius:18px;
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  box-shadow:0 12px 40px #0005;
+}
+.card,.support-box{
+  background:linear-gradient(145deg,rgba(23,36,62,.88),rgba(10,18,36,.82))!important;
+  border:1px solid #ffffff20!important;
+  backdrop-filter:blur(16px);
+  box-shadow:0 18px 45px #0004;
+}
+.card:hover{transform:translateY(-10px) scale(1.015);border-color:#00d9ff99}
+.btn{border:1px solid #ffffff22}
+.extra-section{padding:80px 7%;min-height:60vh}
+.extra-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.extra-card{
+  background:linear-gradient(145deg,#17243e,#0c1224);
+  border:1px solid #ffffff20;border-radius:22px;padding:25px;
+  transition:.35s;box-shadow:0 15px 40px #0003
+}
+.extra-card:hover{transform:translateY(-9px);border-color:#00d9ff;box-shadow:0 15px 40px #00d9ff20}
+.extra-card p{color:#aab5cb;line-height:2;margin-top:10px}
+.stat-number{font-size:30px;color:#00d9ff;font-weight:900}
+.offer-banner{
+  max-width:1000px;margin:30px auto;padding:30px;border-radius:25px;
+  background:linear-gradient(120deg,#00d9ff20,#8b5cf620);
+  border:1px solid #00d9ff55;text-align:center
+}
+.offer-banner p{color:#c3cce0;line-height:2;margin:12px 0}
+.faq-item{max-width:850px;margin:12px auto;padding:20px;border-radius:16px;background:#111a30;border:1px solid #ffffff20}
+.faq-item summary{cursor:pointer;font-weight:800}
+.faq-item p{color:#aab5cb;line-height:2;margin-top:12px}
+@media(max-width:700px){
+  header{padding:12px 5%}
+  nav{max-height:75vh;overflow-y:auto}
+  .extra-section{padding:65px 5%}
+}
+
+</style>
+  <!-- GOOGLE_SITE_VERIFICATION: بعد از دریافت تگ واقعی گوگل، کل meta tag را اینجا قرار بده. -->
+  <!-- مثالِ جایگاه: <meta name="google-site-verification" content="کد-واقعی-گوگل" /> -->
+</head>
+
+<body>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<header>
+
+<div class="logo">ARSH STUDIO</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
+<a onclick="showPage('home')">خانه</a>
+<a onclick="showPage('products')">محصولات</a>
+      <a onclick="showPage('portfolio')">نمونه‌کارها</a>
+      <a onclick="showPage('reviews')">نظرات</a>
+      <a onclick="showPage('faq')">سؤالات متداول</a>
+<a onclick="showPage('support')">پشتیبانی</a>
+<a onclick="showPage('about')">درباره ما</a>
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="active">
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+آینده دیجیتال<br>
+با <span>ARSH STUDIO</span>
+</h1>
+
+<p>
+به دنیای طراحی وب‌سایت، آموزش امنیت شبکه و خدمات تخصصی دیجیتال خوش آمدید.
+
+اینجا مهارت‌های جدید را یاد بگیرید و وارد دنیای حرفه‌ای فناوری شوید.
+</p>
+
+<a class="btn" onclick="showPage('products')">
+مشاهده محصولات
+</a>
+
+<a class="btn" onclick="showPage('support')">
+ارتباط با ما
+</a>
+
+</div>
+
+<div class="scene floating">
+
+<div class="cube">
+<div class="face front">ARSH</div>
+<div class="face back">WEB</div>
+<div class="face right">3D</div>
+<div class="face left">PRO</div>
+<div class="face top">AI</div>
+<div class="face bottom">DEV</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<h2 class="title">محصولات و دوره‌های آموزشی</h2>
+
+<p class="subtitle">
+مهارت‌های حرفه‌ای را با آموزش‌های تخصصی یاد بگیرید.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>دوره طراحی حرفه‌ای سایت</h3>
+<p>آموزش طراحی سایت، HTML، CSS و ساخت صفحات حرفه‌ای و فروشگاهی.</p>
+<div class="price">۶,۰۰۰,۰۰۰ تومان</div>
+<a class="btn" href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D9%86%20%D8%AE%D8%AF%D9%85%D8%AA%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85.%0A%D8%AE%D8%AF%D9%85%D8%AA%20%D9%85%D9%88%D8%B1%D8%AF%D9%86%D8%B8%D8%B1%3A%20%D8%AF%D9%88%D8%B1%D9%87%20%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D8%AD%D8%B1%D9%81%D9%87%E2%80%8C%D8%A7%DB%8C%20%D8%B3%D8%A7%DB%8C%D8%AA%0A%D9%82%DB%8C%D9%85%D8%AA%20%D8%AF%D8%B1%D8%AC%E2%80%8C%D8%B4%D8%AF%D9%87%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%3A%20%DB%B6%2C%DB%B0%DB%B0%DB%B0%2C%DB%B0%DB%B0%DB%B0%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D8%AA%D9%88%D8%B6%DB%8C%D8%AD%D8%A7%D8%AA%20%DB%8C%D8%A7%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D9%85%D9%86%3A%20" target="_blank" rel="noopener">خرید دوره</a>
+</div>
+
+<div class="card">
+<div class="icon">🛡️</div>
+<h3>دوره امنیت شبکه</h3>
+<p>آشنایی با مفاهیم امنیت شبکه، حفاظت از اطلاعات و اصول امنیت سایبری.</p>
+<div class="price">۵,۰۰۰,۰۰۰ تومان</div>
+<a class="btn" href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D9%86%20%D8%AE%D8%AF%D9%85%D8%AA%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85.%0A%D8%AE%D8%AF%D9%85%D8%AA%20%D9%85%D9%88%D8%B1%D8%AF%D9%86%D8%B8%D8%B1%3A%20%D8%AF%D9%88%D8%B1%D9%87%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%20%D8%B4%D8%A8%DA%A9%D9%87%0A%D9%82%DB%8C%D9%85%D8%AA%20%D8%AF%D8%B1%D8%AC%E2%80%8C%D8%B4%D8%AF%D9%87%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%3A%20%DB%B5%2C%DB%B0%DB%B0%DB%B0%2C%DB%B0%DB%B0%DB%B0%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D8%AA%D9%88%D8%B6%DB%8C%D8%AD%D8%A7%D8%AA%20%DB%8C%D8%A7%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D9%85%D9%86%3A%20" target="_blank" rel="noopener">خرید دوره</a>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>دوره ساخت حرفه‌ای پنل</h3>
+<p>آشنایی با طراحی رابط کاربری و توسعه پنل‌های مدیریتی تحت وب.</p>
+<div class="price">۴,۵۰۰,۰۰۰ تومان</div>
+<a class="btn" href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D9%86%20%D8%AE%D8%AF%D9%85%D8%AA%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85.%0A%D8%AE%D8%AF%D9%85%D8%AA%20%D9%85%D9%88%D8%B1%D8%AF%D9%86%D8%B8%D8%B1%3A%20%D8%AF%D9%88%D8%B1%D9%87%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D8%AD%D8%B1%D9%81%D9%87%E2%80%8C%D8%A7%DB%8C%20%D9%BE%D9%86%D9%84%0A%D9%82%DB%8C%D9%85%D8%AA%20%D8%AF%D8%B1%D8%AC%E2%80%8C%D8%B4%D8%AF%D9%87%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%3A%20%DB%B4%2C%DB%B5%DB%B0%DB%B0%2C%DB%B0%DB%B0%DB%B0%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D8%AA%D9%88%D8%B6%DB%8C%D8%AD%D8%A7%D8%AA%20%DB%8C%D8%A7%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D9%85%D9%86%3A%20" target="_blank" rel="noopener">خرید دوره</a>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>امنیت و بازیابی اکانت اینستاگرام</h3>
+<p>آموزش افزایش امنیت حساب، بازیابی از مسیرهای رسمی و محافظت از اکانت.</p>
+<div class="price">۴,۰۰۰,۰۰۰ تومان</div>
+<a class="btn" href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D9%86%20%D8%AE%D8%AF%D9%85%D8%AA%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85.%0A%D8%AE%D8%AF%D9%85%D8%AA%20%D9%85%D9%88%D8%B1%D8%AF%D9%86%D8%B8%D8%B1%3A%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%20%D9%88%20%D8%A8%D8%A7%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C%20%D8%A7%DA%A9%D8%A7%D9%86%D8%AA%20%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85%0A%D9%82%DB%8C%D9%85%D8%AA%20%D8%AF%D8%B1%D8%AC%E2%80%8C%D8%B4%D8%AF%D9%87%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%3A%20%DB%B4%2C%DB%B0%DB%B0%DB%B0%2C%DB%B0%DB%B0%DB%B0%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D8%AA%D9%88%D8%B6%DB%8C%D8%AD%D8%A7%D8%AA%20%DB%8C%D8%A7%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D9%85%D9%86%3A%20" target="_blank" rel="noopener">خرید دوره</a>
+</div>
+
+<div class="card">
+<div class="icon">🚨</div>
+<h3>دوره گزارش تخلفات قانونی</h3>
+<p>آموزش گزارش تخلفات واقعی از مسیرهای رسمی و آشنایی با قوانین پلتفرم‌ها.</p>
+<div class="price">۳,۰۰۰,۰۰۰ تومان</div>
+<a class="btn" href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D9%86%20%D8%AE%D8%AF%D9%85%D8%AA%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85.%0A%D8%AE%D8%AF%D9%85%D8%AA%20%D9%85%D9%88%D8%B1%D8%AF%D9%86%D8%B8%D8%B1%3A%20%D8%AF%D9%88%D8%B1%D9%87%20%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4%20%D8%AA%D8%AE%D9%84%D9%81%D8%A7%D8%AA%20%D9%82%D8%A7%D9%86%D9%88%D9%86%DB%8C%0A%D9%82%DB%8C%D9%85%D8%AA%20%D8%AF%D8%B1%D8%AC%E2%80%8C%D8%B4%D8%AF%D9%87%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%3A%20%DB%B3%2C%DB%B0%DB%B0%DB%B0%2C%DB%B0%DB%B0%DB%B0%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D8%AA%D9%88%D8%B6%DB%8C%D8%AD%D8%A7%D8%AA%20%DB%8C%D8%A7%20%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D9%85%D9%86%3A%20" target="_blank" rel="noopener">خرید دوره</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- SUPPORT -->
+
+<section id="support">
+
+<h2 class="page-title">مرکز پشتیبانی</h2>
+
+<div class="support-box">
+
+<div class="icon">🎧</div>
+
+<h2>ارتباط با پشتیبانی</h2>
+
+<p>
+برای خرید دوره‌ها، دریافت مشاوره، ثبت سفارش طراحی سایت و دریافت راهنمایی با ما در ارتباط باشید.
+</p>
+
+<div class="contact">
+
+<a href="https://wa.me/989961358163?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20%D8%B3%D8%A7%DB%8C%D8%AA%20ARSH%20STUDIO%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.%0A%D9%86%D8%A7%D9%85%20%D9%88%20%D9%86%D8%A7%D9%85%20%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C%3A%20%0A%D8%B4%D9%85%D8%A7%D8%B1%D9%87%20%D8%AA%D9%85%D8%A7%D8%B3%3A%20%0A%D9%85%D9%88%D8%B6%D9%88%D8%B9%20%D9%BE%DB%8C%D8%A7%D9%85%20%DB%8C%D8%A7%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%3A%20" target="_blank" rel="noopener">
+واتساپ 💬
+</a>
+
+<a href="https://t.me/V2box_Arsh">
+تلگرام ✈️
+</a>
+
+</div>
+
+<p>
+<strong>شماره تماس:</strong>
+<br>
+09961358163
+</p>
+
+<p>
+<strong>آیدی تلگرام:</strong>
+<br>
+@V2box_Arsh
+</p>
+
+<hr style="border-color:#ffffff20;margin:25px 0">
+
+<h2 style="color:#00d9ff">محسن صالحی‌زاده</h2>
+
+<p>
+طراح وب‌سایت و فعال در حوزه فناوری و خدمات دیجیتال.
+
+هدف ما ارائه طراحی‌های مدرن، تجربه کاربری جذاب و آموزش مهارت‌های کاربردی در دنیای فناوری است.
+
+ما تلاش می‌کنیم ایده‌های دیجیتال را به پروژه‌های حرفه‌ای و کاربردی تبدیل کنیم.
+</p>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="page-title">درباره ARSH STUDIO</h2>
+
+<div class="about">
+
+<div class="scene floating" style="margin:auto">
+<div class="cube">
+<div class="face front">ARSH</div>
+<div class="face back">WEB</div>
+<div class="face right">PRO</div>
+<div class="face left">DEV</div>
+<div class="face top">3D</div>
+<div class="face bottom">2026</div>
+</div>
+</div>
+
+<h2 style="color:#00d9ff;margin:25px">
+خلاقیت، تکنولوژی، پیشرفت
+</h2>
+
+<p>
+ARSH STUDIO یک مجموعه فعال در زمینه طراحی وب‌سایت و آموزش مهارت‌های دیجیتال است.
+
+ما به دنبال ایجاد تجربه‌ای متفاوت در دنیای وب هستیم.
+
+از طراحی فروشگاه اینترنتی گرفته تا آموزش امنیت شبکه و توسعه پنل‌های مدیریتی، هدف ما ارائه خدمات مدرن و حرفه‌ای است.
+</p>
+
+<br>
+
+<a class="btn" onclick="showPage('support')">
+تماس با ما
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2 class="title">نمونه‌کارها و پروژه‌ها</h2>
+  <p class="subtitle">نمونه‌هایی از زمینه‌های فعالیت ARSH STUDIO</p>
+  <div class="extra-grid">
+    <article class="extra-card"><div class="icon">🖥️</div><h3>طراحی وب‌سایت</h3><p>طراحی صفحات معرفی، شرکتی و فروشگاهی با تمرکز بر تجربه کاربری و نمایش مناسب در موبایل.</p></article>
+    <article class="extra-card"><div class="icon">📊</div><h3>پنل‌های مدیریتی</h3><p>طراحی رابط کاربری پنل‌ها و داشبوردهای مدیریتی متناسب با نیاز پروژه.</p></article>
+    <article class="extra-card"><div class="icon">🛡️</div><h3>آموزش امنیت دیجیتال</h3><p>آموزش مفاهیم پایه امنیت حساب‌ها، شبکه و حفاظت از اطلاعات به شکل مسئولانه.</p></article>
+  </div>
+  <p class="notice">برای نمایش پروژه‌های واقعی، تصاویر و لینک نمونه‌کارها را پس از آماده‌شدن اینجا اضافه می‌کنیم.</p>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <h2 class="title">اعتماد و تجربه مشتریان</h2>
+  <p class="subtitle">بخش نمایش بازخورد مشتریان</p>
+  <div class="extra-grid">
+    <article class="extra-card"><div class="icon">💬</div><h3>نظر مشتری اول</h3><p>پس از دریافت بازخورد واقعی مشتری، متن و نام مورد تأیید او در این قسمت قرار می‌گیرد.</p></article>
+    <article class="extra-card"><div class="icon">⭐</div><h3>نظر مشتری دوم</h3><p>این بخش برای نمایش تجربه واقعی مشتریان و افزایش شفافیت خدمات در نظر گرفته شده است.</p></article>
+    <article class="extra-card"><div class="icon">🤝</div><h3>تعهد به پشتیبانی</h3><p>پیگیری درخواست‌ها و ارائه توضیحات روشن درباره محدوده و زمان انجام هر سفارش.</p></article>
+  </div>
+</section>
+
+<!-- TRUST / OFFER -->
+<section id="trust">
+  <h2 class="title">تعهدات و پیشنهادهای ویژه</h2>
+  <p class="subtitle">اطلاعات شفاف، ارتباط روشن و پشتیبانی قابل پیگیری</p>
+  <div class="extra-grid">
+    <article class="extra-card"><div class="icon">🔒</div><h3>شفافیت سفارش</h3><p>پیش از شروع کار، محدوده خدمات، هزینه و زمان تحویل با مشتری هماهنگ می‌شود.</p></article>
+    <article class="extra-card"><div class="icon">🧰</div><h3>پشتیبانی سفارش</h3><p>راه ارتباطی برای پیگیری سفارش و مطرح‌کردن پرسش‌ها در دسترس است.</p></article>
+    <article class="extra-card"><div class="icon">📌</div><h3>شرایط خدمات</h3><p>شرایط اصلاحات، تحویل و پشتیبانی هر پروژه باید پیش از پرداخت به‌صورت روشن توافق شود.</p></article>
+  </div>
+  <div class="offer-banner">
+    <h2>🎁 پیشنهادهای ویژه ARSH STUDIO</h2>
+    <p>برای اطلاع از تخفیف‌های فعال و شرایط سفارش، از طریق واتساپ یا تلگرام پیام بدهید.</p>
+    <a class="btn" href="https://wa.me/989961358163" target="_blank" rel="noopener">استعلام پیشنهادها</a>
+  </div>
+  <p class="notice">در این نسخه شمارنده ساختگی سفارش‌ها یا تخفیف غیرواقعی نمایش داده نمی‌شود؛ آمار و پیشنهادها باید با داده واقعی به‌روزرسانی شوند.</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2 class="title">سؤالات متداول</h2>
+  <p class="subtitle">پاسخ کوتاه به پرسش‌های رایج درباره خدمات</p>
+  <div class="faq-item"><details><summary>چطور سفارش ثبت کنم؟</summary><p>از دکمه‌های تماس در صفحه پشتیبانی استفاده کنید و نوع خدمت موردنظر را توضیح دهید.</p></details></div>
+  <div class="faq-item"><details><summary>هزینه و زمان انجام پروژه چطور مشخص می‌شود؟</summary><p>پس از بررسی جزئیات درخواست، هزینه و زمان‌بندی پیش از شروع کار اعلام و هماهنگ می‌شود.</p></details></div>
+  <div class="faq-item"><details><summary>آیا پشتیبانی شبانه‌روزی فعال است؟</summary><p>می‌توانید در هر ساعت پیام خود را ثبت کنید؛ زمان پاسخ‌گویی انسانی به ساعات فعالیت و توافق پشتیبانی بستگی دارد.</p></details></div>
+</section>
+
+<footer>
+© 2026 ARSH WEB STUDIO
+<br><br>
+Designed by Mohsen Salehizadeh
+</footer>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll('section').forEach(page=>{
+page.classList.remove('active');
+});
+
+const targetPage = document.getElementById(id);
+if (!targetPage) return;
+targetPage.classList.add('active');
+
+document.getElementById('nav').classList.remove('show');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+function toggleMenu(){
+
+document.getElementById('nav').classList.toggle('show');
+
+}
+
+
+// Reveal animation for cards and content blocks.
+document.addEventListener('DOMContentLoaded', () => {
+  const revealItems = document.querySelectorAll('.card,.extra-card,.support-box,.offer-banner,.faq-item');
+  revealItems.forEach(item => item.classList.add('reveal'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+  revealItems.forEach(item => observer.observe(item));
+});
+
+</script>
+
+</body>
+</html>
